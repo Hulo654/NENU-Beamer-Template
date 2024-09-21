@@ -1,0 +1,187 @@
+%----------------------------------------------------------------
+% 本主题基于 beamer 内置主题 Berlin 修改而来。
+% 底部导航栏的设置参考了 https://www.guanjihuan.com/archives/2662 ，感谢。
+%-----------------------------------------------------------------
+\documentclass[10pt,aspectratio=43]{beamer} % 其中 aspectratio=43 是设置屏幕比例，也可改为 169.
+%\usetheme[compress]{Berlin}
+\usetheme{default}
+\usefonttheme[onlymath]{serif} % 字体主题
+\usecolortheme{whale} % 颜色主题
+\useinnertheme{rectangles} % 内部主题
+\useoutertheme[subsection=false]{miniframes} % 外部主题
+
+\setbeamercolor{section in head/foot}{fg=white, bg=black} % 设置顶部导航栏颜色
+\setbeamercolor{author in head/foot}{fg=white, bg=black} % 设置底部作者区域颜色
+\setbeamercolor{institute in head/foot}{fg=white, bg=gray} % 设置底部单位区域颜色
+\setbeamercolor{date in head/foot}{fg=white, bg=black} % 设置底部日期区域颜色
+\setbeamertemplate{navigation symbols}{} % 删除导航按钮
+
+% 在导言区加上这一片，在底部可以显示作者、标题、日期和页数。
+% 本人将其中标题修改为了机构/单位。
+\setbeamertemplate{footline}{%
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.65ex,dp=1ex,center]{author in head/foot}%
+			\usebeamerfont{author in head/foot}\insertshortauthor
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.65ex,dp=1ex,center]{institute in head/foot}%
+			\usebeamerfont{institute in head/foot}\insertshortinstitute
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.65ex,dp=1ex,right]{date in head/foot}%
+			\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+	\end{beamercolorbox}}%
+	\vskip0pt%
+}
+
+% 右下角显示页码，会破坏底部导航栏，故不用。
+%\setbeamertemplate{footline}[frame number]{}
+
+% 调用一些包
+\usepackage{ctex, hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+
+\title{东北师范大学学术汇报}
+\author{Sun Kaixin}
+\institute{Northeast Normal University}
+\date{Sept 22, 2024}
+
+\begin{document}
+	% 创建标题页
+	\begin{frame}
+		\maketitle
+	\end{frame}
+%-----------------------------------------------------------
+	% 创建目录页
+	\begin{frame}{Outline} % or Contents
+		\tableofcontents
+	\end{frame}
+%-----------------------------------------------------------
+	\section{第一部分}
+	\begin{frame}
+		\frametitle{Frame Title 1}
+		% 无序列表
+		\begin{itemize} 
+			\item first \\~\\ % 注意“\\~\\”符号作用是增加段落之间的距离，本质上是增加了一个空行。
+			\item second \\~\\
+			\item third \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\begin{frame}
+		\frametitle{Frame Title 2}
+		\begin{itemize} 
+			% change color
+			\item {\color{blue} This is a blue block.} \\~\\
+			\item {\color{red} And this is a red one.} \\~\\
+			\item third \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\begin{frame}
+		\frametitle{Frame Title 3}
+		\begin{itemize} 
+			% \textbf {要加粗的文本}
+			\item 外边，\textbf {傍晚的斜阳}正照在场子上，使得那一簇簇山茱萸的白花在一片娇绿的背景上烘托得分外鲜明。\\~\\
+			\item 那哥儿俩骑来的两匹红毛马儿，现在夹道里吊着。马脚跟前有一群到处随行的猎犬在那里吵架。\\~\\
+			\item 三参数 Logistic 模型：
+			{\LARGE $$
+				P_{i}=c_{i} +\tfrac{1-c_{i}}{1+e^{[-Da_{i}(\theta -b_{i})]}}
+				$$} % 插入数学公式。
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\section{第二部分}
+	\begin{frame}
+		\frametitle{Frame Title 4}
+		\begin{itemize} 
+			\item “Wonderful,” \textbf {Morgan} said. Then she reached into her robe and pulled out a scroll. \\~\\
+			\item “You’ve solved two riddles so far,” she said. “Here is your third.” She handed the scroll to Annie. \\~\\
+			\item  “And for your research—” She pulled a book out from her robe and handed it to Jack. \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\begin{frame}
+		\frametitle{Frame Title 5}
+		\begin{itemize} 
+			\item first \\~\\
+			\item second \\~\\
+			\item third \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\begin{frame}
+		\frametitle{Frame Title 6}
+		\begin{itemize} 
+			\item first \\~\\
+			\item second \\~\\
+			\item third \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\section{第三部分}
+	\begin{frame}
+		\frametitle{Frame Title 7}
+		\begin{itemize} 
+			\item first \\~\\
+			\item second \\~\\
+			\item third \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\begin{frame}
+		\frametitle{Frame Title 8}
+		\begin{itemize} 
+			\item first \\~\\
+			\item second \\~\\
+			\item third \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\begin{frame}
+		\frametitle{Frame Title 9}
+		\begin{itemize} 
+			\item first \\~\\
+			\item second \\~\\
+			\item third \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\section{第四部分}
+	\begin{frame}
+		\frametitle{Frame Title 10}
+		\begin{itemize} 
+			\item first \\~\\
+			\item second \\~\\
+			\item third \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\begin{frame}
+		\frametitle{Frame Title 11}
+		\begin{itemize} 
+			\item first \\~\\
+			\item second \\~\\
+			\item third \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\begin{frame}
+		\frametitle{Frame Title 12}
+		\begin{itemize}
+			\item first \\~\\
+			\item second \\~\\
+			\item third \\~\\
+		\end{itemize}
+	\end{frame}
+%-----------------------------------------------------------
+	\begin{frame}
+		\frametitle{{}} % 结尾页 frametitle 输入 "{}" 不显示内容但保留背景框。
+		\begin{center} % 居中
+		{\Huge Thanks!} % 最大
+	    \end{center}
+	\end{frame}
+%-----------------------------------------------------------
+\end{document}
